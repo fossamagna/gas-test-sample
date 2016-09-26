@@ -1,0 +1,9 @@
+{
+  "scriptId": "1cDomPGSxgy969lcxY3IDoNOkXUhMvfaYhGO6_CQtHchRq5Aaa7Q--xag",
+  "scopes": [
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive.scripts",
+    "https://www.googleapis.com/auth/spreadsheets"
+  ]
+}

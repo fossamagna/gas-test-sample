@@ -1,0 +1,34 @@
+{
+  "name": "gas-test-sample",
+  "version": "0.1.0",
+  "description": "Sample of gas-test and gas-test-cli",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "13.1.0",
+    "gasify": "0.1.0"
+  },
+  "devDependencies": {
+    "assert": "1.4.1",
+    "gas-manager": "0.4.3",
+    "gas-test": "0.1.1",
+    "gas-test-cli": "0.1.1",
+    "mkdirp": "0.5.1",
+    "npm-run-all": "3.1.0"
+  },
+  "scripts": {
+    "test:build": "mkdirp dest && gas-test build test/*.js -o dest/test.js",
+    "test:upload": "gas upload -c gas-test-credentials.json -e test",
+    "pretest": "npm-run-all test:*",
+    "test": "gas-test run -c gas-test-credentials.json -o result.xml",
+    "build": "browserify src/index.js -p gasify -o dest/index.js",
+    "upload": "gas upload -c gas-test-credentials.json",
+    "deploy": "npm-run-all build upload"
+  },
+  "keywords": [
+    "gas-test",
+    "gas-test-cli",
+    "Google Apps Script"
+  ],
+  "author": "fossamagna <fossamagna2@gmail.com>",
+  "license": "Apache-2.0"
+}
