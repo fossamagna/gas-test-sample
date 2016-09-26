@@ -7,4 +7,4 @@ test:
   post:
     - "rm gas-test-credentials.json"
     - mkdir -p $CIRCLE_TEST_REPORTS/gas-test/
-    - find . -type f -regex "result.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/gas-test/ \;
+    - cp result.xml $CIRCLE_TEST_REPORTS/gas-test/
