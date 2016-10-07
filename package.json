@@ -10,8 +10,8 @@
   "devDependencies": {
     "assert": "1.4.1",
     "gas-manager": "0.4.3",
-    "gas-test": "0.2.0",
-    "gas-test-cli": "0.2.0",
+    "gas-test": "0.4.0",
+    "gas-test-cli": "0.4.0",
     "mkdirp": "0.5.1",
     "npm-run-all": "3.1.0"
   },
@@ -19,7 +19,7 @@
     "test:build": "mkdirp dest && gas-test build test/*.js -o dest/test.js",
     "test:upload": "gas upload -c gas-test-credentials.json -e test",
     "pretest": "npm-run-all test:*",
-    "test": "gas-test run -c gas-test-credentials.json -o result.xml",
+    "test": "gas-test run -c gas-test-credentials.json",
     "build": "browserify src/index.js -p gasify -o dest/index.js",
     "upload": "gas upload -c gas-test-credentials.json",
     "deploy": "npm-run-all build upload"
