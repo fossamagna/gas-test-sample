@@ -13,11 +13,7 @@ function toCSV(sheet) {
   for (var i = 0; i < values.length; i++) {
     var columns = [];
     for (var j = 0; j < values[i].length; j++) {
-      if (values[i][j]) {
-        columns.push(values[i][j]);
-      } else {
-        columns.push('');
-      }
+      columns.push(values[i][j] || '');
     }
     rows.push(columns.join(','));
   }
