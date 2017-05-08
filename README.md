@@ -1,5 +1,7 @@
 # gas-test-sample [![Build Status][travis-image]][travis-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fossamagna/gas-test-sample.svg)](https://greenkeeper.io/)
+
 > Sample of [gas-test](https://github.com/fossamagna/gas-test) and [gas-test-cli](https://github.com/fossamagna/gas-test-cli)
 
 ## Build
