@@ -5,6 +5,7 @@ jobs:
       - image: node
     steps:
       - checkout
+      - run: npm ci
       - run: npm run build
   test:
     docker:
@@ -16,6 +17,7 @@ jobs:
           # update locally with:
           # openssl aes-256-cbc -e -in gas-test-credentials.json -out encrypted-credentials -k $KEY
           command: openssl aes-256-cbc -d -in encrypted-credentials -k $KEY > gas-test-credentials.json
+      - run: npm ci
       - run:
           name: Test
           command: npm test -- -r xunit -o result.xml --suppress_console
