@@ -8,10 +8,11 @@
     "gasify": "0.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "assert": "1.4.1",
     "gas-manager": "0.4.3",
-    "gas-test": "0.4.0",
-    "gas-test-cli": "0.4.1",
+    "gas-test": "0.5.0",
+    "gas-test-cli": "0.5.0",
     "mkdirp": "0.5.1",
     "npm-run-all": "3.1.0"
   },
