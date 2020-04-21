@@ -5,3 +5,8 @@ node_js:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_681738214e5f_key -iv $encrypted_681738214e5f_iv -in gas-test-credentials.json.enc -out gas-test-credentials.json -d
+script:
+  - npx clasp login --creds gas-test-credentials.json --status
+  - npm build
+  - npm test
+  - npx clasp logout

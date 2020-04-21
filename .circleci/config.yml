@@ -19,9 +19,11 @@ jobs:
           command: openssl aes-256-cbc -d -in encrypted-credentials -k $KEY > gas-test-credentials.json
       - run: npm ci
       - run: mkdir -p test-results
+      - run: npx clasp login --creds gas-test-credentials.json --status
       - run:
           name: Test
           command: npm test -- -r xunit -o test-results/result.xml --suppress_console
+      - run: npx clasp logout
       - store_test_results:
           path: test-results
 
