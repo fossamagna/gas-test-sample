@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npm run build
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run:
+          name: decrypt credentials file
+          # update locally with:
+          # openssl aes-256-cbc -e -in gas-test-credentials.json -out encrypted-credentials -k $KEY
+          command: openssl aes-256-cbc -d -in encrypted-credentials -k $KEY > gas-test-credentials.json
+      - run:
+          name: Test
+          command: npm test -- -r xunit -o result.xml --suppress_console
+      - store_test_results:
+          path: result.xml
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
