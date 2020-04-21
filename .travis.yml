@@ -1,6 +1,7 @@
 language: node_js
 node_js:
-  - v4
+  - v12
+  - v10
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_323c4d3a3c16_key -iv $encrypted_323c4d3a3c16_iv -in gas-test-credentials.json.enc -out gas-test-credentials.json -d
