@@ -21,6 +21,7 @@
     "test:upload": "gas upload -c gas-test-credentials.json -e test",
     "pretest": "npm-run-all test:*",
     "test": "gas-test run -c gas-test-credentials.json",
+    "prebuild": "mkdirp dest",
     "build": "browserify src/index.js -p gasify -o dest/index.js",
     "upload": "gas upload -c gas-test-credentials.json",
     "deploy": "npm-run-all build upload"
