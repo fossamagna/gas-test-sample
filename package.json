@@ -8,7 +8,7 @@
     "gasify": "1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "7.9.0",
     "assert": "2.0.0",
     "gas-manager": "0.6.0",
     "gas-test": "0.5.0",
