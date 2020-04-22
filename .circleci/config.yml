@@ -17,9 +17,9 @@ jobs:
           # update locally with:
           # openssl aes-256-cbc -e -in gas-test-credentials.json -out encrypted-credentials -k $KEY
           command: openssl aes-256-cbc -d -in encrypted-credentials -k $KEY > gas-test-credentials.json
+          command: openssl aes-256-cbc -d -in .clasprc.json.encrypted -k $RCKEY > $HOME/.clasprc.json
       - run: npm ci
       - run: mkdir -p test-results
-      - run: npx clasp login --creds gas-test-credentials.json --status
       - run:
           name: Test
           command: npm test -- -r xunit -o test-results/result.xml --suppress_console
