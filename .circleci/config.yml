@@ -15,13 +15,13 @@ jobs:
       - run:
           name: decrypt credentials file
           # update locally with:
-          # openssl aes-256-cbc -e -in gas-test-credentials.json -out encrypted-credentials -k $KEY
-          command: openssl aes-256-cbc -d -in encrypted-credentials -k $KEY > gas-test-credentials.json
+          # openssl aes-256-cbc -e -pbkdf2 -in gas-test-credentials.json -out encrypted-credentials -k $KEY
+          command: openssl aes-256-cbc -d -pbkdf2 -in encrypted-credentials -k $KEY > gas-test-credentials.json
       - run:
           name: decrypt .clasprc.json
           # update locally with:
-          # openssl aes-256-cbc -e -in ~/.clasprc.json -out ./.clasprc.json.encrypted -k $KEY
-          command: openssl aes-256-cbc -d -in .clasprc.json.encrypted -k $RCKEY > $HOME/.clasprc.json
+          # openssl aes-256-cbc -e -pbkdf2 -in ~/.clasprc.json -out ./.clasprc.json.encrypted -k $KEY
+          command: openssl aes-256-cbc -d -pbkdf2 -in .clasprc.json.encrypted -k $KEY > $HOME/.clasprc.json
       - run: npm ci
       - run: mkdir -p test-results
       - run:
