@@ -10,22 +10,25 @@
   "devDependencies": {
     "@babel/core": "7.9.0",
     "@google/clasp": "2.3.0",
+    "@types/assert": "1.4.6",
+    "@types/google-apps-script": "1.0.12",
     "assert": "2.0.0",
-    "gas-test": "0.5.0",
-    "gas-test-cli": "0.5.0",
+    "gas-test": "0.5.1",
+    "gas-test-cli": "0.6.0",
     "mkdirp": "1.0.4",
-    "npm-run-all": "4.1.5"
+    "npm-run-all": "4.1.5",
+    "tsify": "^4.0.1"
   },
   "scripts": {
     "initialize": "mkdirp dest",
     "build:manifest": "cp src/appsscript.json dest/appsscript.json",
     "pretest:build": "npm-run-all initialize build:manifest",
-    "test:build": "gas-test build test/*.js -o dest/test.js",
+    "test:build": "gas-test build -t test/*.ts -o dest/test.js",
     "test:upload": "clasp push --force",
     "pretest": "npm-run-all test:*",
     "test": "gas-test run -c gas-test-credentials.json",
     "prebuild": "npm-run-all initialize build:manifest",
-    "build": "browserify src/index.js -p gasify -o dest/index.js",
+    "build": "browserify src/index.ts -p tsify -p gasify -o dest/index.js",
     "upload": "clasp push --force",
     "deploy": "npm-run-all build upload"
   },
