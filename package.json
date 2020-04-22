@@ -19,7 +19,7 @@
   "scripts": {
     "initialize": "mkdirp dest",
     "build:manifest": "cp src/appsscript.json dest/appsscript.json",
-    "pretest:build": "npm run initialize",
+    "pretest:build": "npm-run-all initialize build:manifest",
     "test:build": "gas-test build test/*.js -o dest/test.js",
     "test:upload": "clasp push --force",
     "pretest": "npm-run-all test:*",
