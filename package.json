@@ -9,21 +9,24 @@
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
+    "@google/clasp": "2.3.0",
     "assert": "2.0.0",
-    "gas-manager": "0.6.0",
     "gas-test": "0.5.0",
     "gas-test-cli": "0.5.0",
     "mkdirp": "1.0.4",
     "npm-run-all": "4.1.5"
   },
   "scripts": {
-    "test:build": "mkdirp dest && gas-test build test/*.js -o dest/test.js",
-    "test:upload": "gas upload -c gas-test-credentials.json -e test",
+    "initialize": "mkdirp dest",
+    "build:manifest": "cp src/appsscript.json dest/appsscript.json",
+    "pretest:build": "npm-run-all initialize build:manifest",
+    "test:build": "gas-test build test/*.js -o dest/test.js",
+    "test:upload": "clasp push --force",
     "pretest": "npm-run-all test:*",
     "test": "gas-test run -c gas-test-credentials.json",
-    "prebuild": "mkdirp dest",
+    "prebuild": "npm-run-all initialize build:manifest",
     "build": "browserify src/index.js -p gasify -o dest/index.js",
-    "upload": "gas upload -c gas-test-credentials.json",
+    "upload": "clasp push --force",
     "deploy": "npm-run-all build upload"
   },
   "keywords": [
