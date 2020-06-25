@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "browserify": "16.5.1",
-    "gasify": "1.0.0"
+    "gasify": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
