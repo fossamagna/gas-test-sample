@@ -8,7 +8,7 @@
     "gasify": "1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.9.0",
+    "@babel/core": "7.25.8",
     "@google/clasp": "2.3.0",
     "@types/assert": "1.4.6",
     "@types/google-apps-script": "1.0.13",
