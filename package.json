@@ -11,7 +11,7 @@
     "@babel/core": "7.9.0",
     "@google/clasp": "2.3.0",
     "@types/assert": "1.4.6",
-    "@types/google-apps-script": "1.0.13",
+    "@types/google-apps-script": "1.0.84",
     "assert": "2.0.0",
     "gas-test": "0.5.1",
     "gas-test-cli": "0.6.0",
