@@ -4,7 +4,7 @@
   "description": "Sample of gas-test and gas-test-cli",
   "main": "index.js",
   "dependencies": {
-    "browserify": "16.5.1",
+    "browserify": "17.0.0",
     "gasify": "1.0.0"
   },
   "devDependencies": {
